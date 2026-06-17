@@ -1,8 +1,0 @@
-[32mINFO    [0m CypressInfra:conftest.py:11 Starting test: test_login_success
-[32mINFO    [0m CypressInfra:base_driver.py:19 Initializing WebDriver for browser: chrome
-[32mINFO    [0m CypressInfra:base_driver.py:49 Navigating to https://www.saucedemo.com/
-[32mINFO    [0m CypressInfra:base_driver.py:268 Fill data into element: ('id', 'user-name')
-[32mINFO    [0m CypressInfra:base_driver.py:268 Fill data into element: ('id', 'password')
-[32mINFO    [0m CypressInfra:base_driver.py:237 Click on element: ('id', 'login-button')
-[32mINFO    [0m CypressInfra:base_driver.py:246 Get text from element: ('class name', 'app_logo')
-[32mINFO    [0m CypressInfra:base_driver.py:287 Closing WebDriver

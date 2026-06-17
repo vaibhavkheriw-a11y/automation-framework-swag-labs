@@ -1,0 +1,8 @@
+[32mINFO    [0m CypressInfra:conftest.py:11 Starting test: test_login_with_wrong_credentials_shows_error
+[32mINFO    [0m CypressInfra:base_driver.py:19 Initializing WebDriver for browser: chrome
+[32mINFO    [0m CypressInfra:base_driver.py:49 Navigating to https://www.saucedemo.com/
+[32mINFO    [0m CypressInfra:base_driver.py:301 Fill data into element: ('id', 'user-name')
+[32mINFO    [0m CypressInfra:base_driver.py:301 Fill data into element: ('id', 'password')
+[32mINFO    [0m CypressInfra:base_driver.py:270 Click on element: ('id', 'login-button')
+[32mINFO    [0m CypressInfra:base_driver.py:279 Get text from element: ('css selector', "h3[data-test='error']")
+[32mINFO    [0m CypressInfra:base_driver.py:320 Closing WebDriver

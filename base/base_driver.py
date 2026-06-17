@@ -47,11 +47,44 @@ class BaseDriver:
     def go(self, url):
         with allure.step(f"Navigate to {url}"):
             logger.info(f"Navigating to {url}")
-            try:
-                self.my_webdriver.get(url)
-            except Exception as e:
-                logger.exception("Navigation failed")
-                assert False, f"Can not navigate to {url}.\n{e}"
+            # Retry navigation a few times in case the driver/connection is flaky
+            attempts = 3
+            for attempt in range(1, attempts + 1):
+                with allure.step(f"Navigate to {url} (attempt {attempt})"):
+                    try:
+                        self.my_webdriver.get(url)
+                        return
+                    except Exception as e:
+                        logger.exception(f"Navigation attempt {attempt} failed")
+                        # try to capture a screenshot and browser logs for debugging
+                        try:
+                            screenshot = self.take_screenshot(f"nav_error_attempt_{attempt}.png")
+                            try:
+                                allure.attach.file(
+                                    screenshot,
+                                    name=f"Navigation failure screenshot attempt {attempt}",
+                                    attachment_type=allure.attachment_type.PNG,
+                                )
+                            except Exception:
+                                logger.exception("Failed to attach navigation screenshot to Allure")
+                        except Exception:
+                            logger.exception("Failed to take navigation screenshot")
+
+                        try:
+                            if hasattr(self.my_webdriver, "get_log"):
+                                browser_logs = self.my_webdriver.get_log("browser")
+                                if browser_logs:
+                                    text = "\n".join([f"{l.get('level')} - {l.get('message')}" for l in browser_logs])
+                                    allure.attach(text, name=f"Browser logs attempt {attempt}", attachment_type=allure.attachment_type.TEXT)
+                        except Exception:
+                            logger.exception("Failed to collect browser logs")
+
+                        # backoff before retrying
+                        if attempt < attempts:
+                            time.sleep(5 * attempt)
+                        else:
+                            logger.exception("Navigation failed after retries")
+                            assert False, f"Can not navigate to {url}.\n{e}"
 
     def title_is(self, title):
         try:

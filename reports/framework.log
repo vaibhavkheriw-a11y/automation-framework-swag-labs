@@ -1,0 +1,101 @@
+2026-06-17 16:29:30,444 | INFO | CypressInfra | Starting test: test_login_success
+2026-06-17 16:29:30,446 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:29:34,599 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:29:35,608 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:29:35,740 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:29:35,832 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:29:36,000 | INFO | CypressInfra | Get text from element: ('class name', 'app_logo')
+2026-06-17 16:29:36,045 | INFO | CypressInfra | Test test_login_success passed
+2026-06-17 16:29:36,048 | INFO | CypressInfra | Closing WebDriver
+2026-06-17 16:30:35,315 | INFO | CypressInfra | Starting test: test_add_to_cart_updates_cart_badge
+2026-06-17 16:30:35,317 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:30:37,536 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:30:38,556 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:30:38,654 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:30:38,710 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:30:38,900 | INFO | CypressInfra | Click on element: ('id', 'add-to-cart-sauce-labs-backpack')
+2026-06-17 16:30:39,021 | INFO | CypressInfra | Get text from element: ('class name', 'shopping_cart_badge')
+2026-06-17 16:30:39,057 | INFO | CypressInfra | Test test_add_to_cart_updates_cart_badge passed
+2026-06-17 16:30:39,058 | INFO | CypressInfra | Closing WebDriver
+2026-06-17 16:30:41,328 | INFO | CypressInfra | Starting test: test_checkout_can_finish_order
+2026-06-17 16:30:41,329 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:30:43,494 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:30:43,734 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:30:44,621 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:30:44,682 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:30:44,859 | INFO | CypressInfra | Click on element: ('id', 'add-to-cart-sauce-labs-backpack')
+2026-06-17 16:30:44,994 | INFO | CypressInfra | Click on element: ('class name', 'shopping_cart_link')
+2026-06-17 16:30:45,073 | INFO | CypressInfra | Click on element: ('id', 'checkout')
+2026-06-17 16:30:45,144 | INFO | CypressInfra | Fill data into element: ('id', 'first-name')
+2026-06-17 16:30:45,219 | INFO | CypressInfra | Fill data into element: ('id', 'last-name')
+2026-06-17 16:30:45,277 | INFO | CypressInfra | Fill data into element: ('id', 'postal-code')
+2026-06-17 16:30:45,334 | INFO | CypressInfra | Click on element: ('id', 'continue')
+2026-06-17 16:30:45,456 | INFO | CypressInfra | Click on element: ('id', 'finish')
+2026-06-17 16:30:45,519 | INFO | CypressInfra | Get text from element: ('class name', 'complete-header')
+2026-06-17 16:30:45,547 | INFO | CypressInfra | Test test_checkout_can_finish_order passed
+2026-06-17 16:30:45,548 | INFO | CypressInfra | Closing WebDriver
+2026-06-17 16:30:47,829 | INFO | CypressInfra | Starting test: test_login_success
+2026-06-17 16:30:47,830 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:30:50,126 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:30:51,046 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:30:51,227 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:30:51,344 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:30:51,523 | INFO | CypressInfra | Get text from element: ('class name', 'app_logo')
+2026-06-17 16:30:51,581 | INFO | CypressInfra | Test test_login_success passed
+2026-06-17 16:30:51,584 | INFO | CypressInfra | Closing WebDriver
+2026-06-17 16:30:53,922 | INFO | CypressInfra | Starting test: test_logout_returns_to_login_page
+2026-06-17 16:30:53,923 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:30:56,120 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:30:57,104 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:30:57,203 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:30:57,259 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:30:57,451 | INFO | CypressInfra | Click on element: ('id', 'react-burger-menu-btn')
+2026-06-17 16:30:57,570 | INFO | CypressInfra | Click on element: ('id', 'logout_sidebar_link')
+2026-06-17 16:30:58,170 | INFO | CypressInfra | Get text from element: ('class name', 'login_logo')
+2026-06-17 16:30:58,199 | INFO | CypressInfra | Test test_logout_returns_to_login_page passed
+2026-06-17 16:30:58,199 | INFO | CypressInfra | Closing WebDriver
+2026-06-17 16:31:00,494 | INFO | CypressInfra | Starting test: test_open_cart_shows_added_item
+2026-06-17 16:31:00,496 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:31:02,729 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:31:03,573 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:31:03,675 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:31:03,742 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:31:03,912 | INFO | CypressInfra | Click on element: ('id', 'add-to-cart-sauce-labs-backpack')
+2026-06-17 16:31:04,037 | INFO | CypressInfra | Click on element: ('class name', 'shopping_cart_link')
+2026-06-17 16:31:04,138 | INFO | CypressInfra | Test test_open_cart_shows_added_item passed
+2026-06-17 16:31:04,140 | INFO | CypressInfra | Closing WebDriver
+2026-06-17 16:31:06,418 | INFO | CypressInfra | Starting test: test_sort_by_price_low_to_high
+2026-06-17 16:31:06,419 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:31:08,621 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:31:09,804 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:31:09,907 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:31:09,965 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:31:10,365 | INFO | CypressInfra | Test test_sort_by_price_low_to_high passed
+2026-06-17 16:31:10,367 | INFO | CypressInfra | Closing WebDriver
+2026-06-17 16:33:08,841 | INFO | CypressInfra | Starting test: test_login_success
+2026-06-17 16:33:08,842 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:33:11,113 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:33:12,268 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:33:12,367 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:33:12,429 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:33:12,602 | INFO | CypressInfra | Get text from element: ('class name', 'app_logo')
+2026-06-17 16:33:12,664 | INFO | CypressInfra | Test test_login_success passed
+2026-06-17 16:33:12,666 | INFO | CypressInfra | Closing WebDriver
+2026-06-17 16:33:46,439 | INFO | CypressInfra | Starting test: test_login_success
+2026-06-17 16:33:46,440 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:33:48,774 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:33:49,701 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:33:49,802 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:33:49,868 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:33:50,028 | INFO | CypressInfra | Get text from element: ('class name', 'app_logo')
+2026-06-17 16:33:50,081 | INFO | CypressInfra | Test test_login_success passed
+2026-06-17 16:33:50,083 | INFO | CypressInfra | Closing WebDriver
+2026-06-17 16:43:58,421 | INFO | CypressInfra | Starting test: test_login_success
+2026-06-17 16:43:58,422 | INFO | CypressInfra | Initializing WebDriver for browser: chrome
+2026-06-17 16:44:00,943 | INFO | CypressInfra | Navigating to https://www.saucedemo.com/
+2026-06-17 16:44:01,876 | INFO | CypressInfra | Fill data into element: ('id', 'user-name')
+2026-06-17 16:44:01,970 | INFO | CypressInfra | Fill data into element: ('id', 'password')
+2026-06-17 16:44:02,026 | INFO | CypressInfra | Click on element: ('id', 'login-button')
+2026-06-17 16:44:02,201 | INFO | CypressInfra | Get text from element: ('class name', 'app_logo')
+2026-06-17 16:44:02,245 | INFO | CypressInfra | Test test_login_success passed
+2026-06-17 16:44:02,247 | INFO | CypressInfra | Closing WebDriver

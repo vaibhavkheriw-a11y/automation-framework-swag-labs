@@ -1,9 +1,11 @@
+import allure
 import configparser
 import os
 import time
 from selenium import webdriver
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.ui import WebDriverWait
+from utilities.logger import logger
 
 class BaseDriver:
     config_path = os.path.join(
@@ -14,6 +16,7 @@ class BaseDriver:
 
     def __init__(self):
         browser_name = self.get_browser_name()
+        logger.info(f"Initializing WebDriver for browser: {browser_name}")
         try:
             if browser_name in ("chrome", "ch"):
                 self.options = webdriver.ChromeOptions()
@@ -42,10 +45,13 @@ class BaseDriver:
         return "ch"
 
     def go(self, url):
-        try:
-            self.my_webdriver.get(url)
-        except Exception as e:
-            assert False, f"Can not navigate to {url}.\n{e}"
+        with allure.step(f"Navigate to {url}"):
+            logger.info(f"Navigating to {url}")
+            try:
+                self.my_webdriver.get(url)
+            except Exception as e:
+                logger.exception("Navigation failed")
+                assert False, f"Can not navigate to {url}.\n{e}"
 
     def title_is(self, title):
         try:
@@ -227,18 +233,24 @@ class BaseDriver:
             assert False, f"Can not wait for clickable element {element_locator}.\n{e}"
 
     def click_on_element(self, element_locator=()):
-        try:
-            self.wait_for_element_clickable(element_locator).click()
-        except Exception as e:
-            assert False, f"Can not click on {element_locator}.\n{e}"
+        with allure.step(f"Click element {element_locator}"):
+            logger.info(f"Click on element: {element_locator}")
+            try:
+                self.wait_for_element_clickable(element_locator).click()
+            except Exception as e:
+                logger.exception("Click action failed")
+                assert False, f"Can not click on {element_locator}.\n{e}"
 
     def get_text_of_element(self, element_locator=()):
-        try:
-            # wait for visibility to ensure element is present and visible
-            elem = self.visibility_of_element_located(element_locator)
-            return elem.text
-        except Exception as e:
-            assert False, f"Can not get text of {element_locator} element.\n{e}"
+        with allure.step(f"Get text from element {element_locator}"):
+            logger.info(f"Get text from element: {element_locator}")
+            try:
+                # wait for visibility to ensure element is present and visible
+                elem = self.visibility_of_element_located(element_locator)
+                return elem.text
+            except Exception as e:
+                logger.exception("Get text failed")
+                assert False, f"Can not get text of {element_locator} element.\n{e}"
 
     def wait_for_seconds(self, sec):
         time.sleep(sec)
@@ -252,24 +264,31 @@ class BaseDriver:
             assert False, f"Can not switch to tab {tab_number}.\n{e}"
 
     def fill_data(self, upload_locator=(), file_path=""):
-        try:
-            elem = self.visibility_of_element_located(upload_locator)
-            elem.send_keys(file_path)
-        except Exception as e:
-            assert False, f"Can not fill data in {upload_locator}.\n{e}"
+        with allure.step(f"Fill data into element {upload_locator}"):
+            logger.info(f"Fill data into element: {upload_locator}")
+            try:
+                elem = self.visibility_of_element_located(upload_locator)
+                elem.send_keys(file_path)
+            except Exception as e:
+                logger.exception("Fill data failed")
+                assert False, f"Can not fill data in {upload_locator}.\n{e}"
 
     def take_screenshot(self, file_name):
-        base_dir = os.path.dirname(os.path.dirname(__file__))
-        screenshots_dir = os.path.join(base_dir, "screenshots")
-        os.makedirs(screenshots_dir, exist_ok=True)
-        screenshot_path = os.path.join(screenshots_dir, file_name)
-        self.my_webdriver.save_screenshot(screenshot_path)
-        return screenshot_path
+        with allure.step(f"Take screenshot {file_name}"):
+            logger.info(f"Taking screenshot: {file_name}")
+            base_dir = os.path.dirname(os.path.dirname(__file__))
+            screenshots_dir = os.path.join(base_dir, "screenshots")
+            os.makedirs(screenshots_dir, exist_ok=True)
+            screenshot_path = os.path.join(screenshots_dir, file_name)
+            self.my_webdriver.save_screenshot(screenshot_path)
+            return screenshot_path
 
     def exit_webdriver(self):
+        logger.info("Closing WebDriver")
         try:
             self.my_webdriver.quit()
         except Exception as e:
+            logger.exception("WebDriver quit failed")
             assert False, f"Can not exit webdriver.\n{e}"
 
     # Convenience passthroughs so callers can use webdriver APIs when needed

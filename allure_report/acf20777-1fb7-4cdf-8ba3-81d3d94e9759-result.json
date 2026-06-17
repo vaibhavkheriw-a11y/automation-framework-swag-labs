@@ -1,1 +1,0 @@
-{"name": "test_logout_returns_to_login_page", "status": "passed", "start": 1781620966706, "stop": 1781620969095, "uuid": "d677777d-e2ac-4a0a-9600-596effda2692", "testCaseId": "1cd81809ea0d3f949d038a12bef2715b", "fullName": "test_cases.test_logout#test_logout_returns_to_login_page", "titlePath": ["test_cases", "test_logout.py"]}
